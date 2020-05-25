@@ -1,0 +1,157 @@
+body {
+    height: 100%;
+    background-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #111111;
+    font-family: Arial, serif;
+    font-weight: bold;
+    font-size: 25px;
+    height: 75px;
+    display: grid;
+    grid-template-columns: repeat(15,1fr);
+}
+
+.navigation {
+    margin: auto auto 19px;
+    grid-column-start: 2;
+    grid-column-end: 15;
+}
+
+.site_logo {
+    text-decoration: none;
+    padding-right: 30px;
+    color: #FFCC66;
+}
+
+.navigation_link {
+    text-decoration: none;
+    padding-right: 30px;
+    color: #F9F9F9;
+}
+
+.login_href {
+    margin: auto;
+    grid-column: 15;
+}
+
+.account_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #FFCC66;
+    background-size: cover;
+}
+
+.site_logo:hover, .site_logo:active, .site_logo:focus {
+    color: #F9F9F9;
+}
+
+.navigation_link:hover, .navigation_link:active, .navigation_link:focus {
+    color: #FFCC66;
+}
+
+.account_icon:hover, .account_icon:active, .account_icon:focus {
+    border-color: #F9F9F9;
+}
+
+/*-----------------------------------------------*/
+
+.main_block {
+    font-family: Arial, serif;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 60vw;
+    min-height: calc(100vh - 169px);
+}
+
+.post_header{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.post_pic_1v1, .post_pic_16v9{
+    margin: 20px auto 20px;
+    width: calc(100% - 46px);
+    padding-top: calc(100% - 46px);
+    border-radius: 1%;
+    border: 3px solid #FFCC66;
+    background-size: cover;
+}
+
+.post_pic_16v9{
+    padding-top: calc(59% - 46px);
+}
+
+.post_name_href{
+    text-decoration: none;
+    color: black;
+}
+
+.post_name{
+    padding-top: 5px;
+    border-top: 1px solid #DCDCDC;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.post_name_href:hover, .post_href:active, .post_href:focus {
+    color: #FFCC66;
+}
+
+.post_pic_1v1:hover, .post_pic_1v1:active, .post_pic_1v1:focus,
+.post_pic_16v9:hover, .post_pic_16v9:active, .post_pic_16v9:focus {
+    border-color: #F9F9F9;
+}
+
+p {
+    padding: 10px 20px;
+}
+
+/*-----------------------------------------------*/
+
+.footer {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(60vw - 40px);
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #DCDCDC;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.admin_link {
+    grid-column: 2;
+    margin: auto 10px auto auto;
+    color: #111111;
+    text-decoration: none;
+}
+
+.lobruh_logo {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    grid-column: 3;
+    font-family: Arial, serif;
+    font-size: 12px;
+    color: #111111;
+}
+
+.admin_link:hover, .admin_link:active, .admin_link:focus {
+    color: #FFCC66;
+}

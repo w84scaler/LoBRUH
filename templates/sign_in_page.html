@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/lobruh_styles.css">
+		<link rel="stylesheet" href="styles/sign_in_page_styles.css">
+		{% include 'title.html' with {'title_add':' - Sign in'} %}
+	</head>
+
+	<body>
+		<div class="empty_header">
+			<div class="logo">League of BRUH</div>
+		</div>
+		<div class="main_block">
+
+			<form class="sign_in" action="sign_in.php">
+				<div class="work_section">
+					{% include 'post_header.html' with {'post_name':'Sign In'} %}
+					<div class="text_section">
+						<input type="text" class="text_input" placeholder="Login">
+					</div>
+					<div class="text_section">
+						<input type="password" class="text_input" placeholder="Password">
+					</div>
+					<input type="submit" class="sign_in_button" value="Sign In">
+				</div>
+			</form>
+
+		</div>
+
+		{% include 'footer.html' %}
+
+		<script src="https://kit.fontawesome.com/5d6364b770.js" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/lobruh_styles.css">
+		<link rel="stylesheet" href="styles/champion_page.css">
+		{% include 'title.html' with {'title_add':champ_name} %}
+	</head>
+
+	<body>
+
+		{% include 'header.html' with {'account_name':user_name} %}
+
+		<div class="main_block">
+
+			{% include 'post_header.html' with {'post_name':champ_desc.name} %}
+
+			{% include 'champ_desc.html' with {'champ_name':champ_name,
+											   'champ_text':champ_desc.description} %}
+
+			{% include 'post_header.html' with {'post_name':'Умения'} %}
+			<div class="skills">
+				{% for skill in skills %}
+					{% include 'skill.html' with {'skill_id':skill.id,
+												  'skill_name':skill.name,
+												  'skill_desc':skill.description} %}
+				{% endfor %}
+			</div>
+
+			{% include 'post_header.html' with {'post_name':'Доступные образы'} %}
+			<div class="skins">
+				{% for skin in skins %}
+					<div class="skin">
+					{% include 'post_pic_16v9.html' with {'post_href':'',
+														  'champ_name':champ_name,
+														  'post_skin_id':skin.id,
+														  'post_name':skin.name} %}
+					</div>
+				{% endfor %}
+			</div>
+
+			{% include 'post_header.html' with {'post_name':'Комментарии'} %}
+
+			{% include 'comment_form.html'%}
+
+			<div class="comments">
+				{% for comment in comments %}
+				<div class="comment">
+					{% include 'comment.html' with {'comment_author':comment.author,
+													'comment_time':comment.time,
+													'comment_text':comment.text} %}
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		{% include 'footer.html' %}
+
+		<script src="https://kit.fontawesome.com/5d6364b770.js" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

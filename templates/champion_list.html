@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/lobruh_styles.css">
+		<link rel="stylesheet" href="styles/champion_list_styles.css">
+		{% include 'title.html' with {'title_add':'Champlist'} %}
+	</head>
+
+	<body>
+
+		{% include 'header.html' with {'account_name':'w84scaler'} %}
+
+		<div class="main_block">
+
+			{% include 'post_header.html' with {'post_name':'Добро пожаловать на League of BRUH'} %}
+
+			{% include 'search_form.html' %}
+
+			<div class="content">
+				{% for champion in champions %}
+					<div class="champion">
+					{% include 'post_pic_1v1.html' with {'post_id':champion.id,
+														 'post_name':champion.name,
+														 'post_head':champion.name} %}
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		{% include 'footer.html' %}
+
+		<script src="https://kit.fontawesome.com/5d6364b770.js" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

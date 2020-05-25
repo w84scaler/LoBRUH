@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/lobruh_styles.css">
+		<link rel="stylesheet" href="styles/main_lobruh_styles.css">
+		<title>LoBRUH</title>
+	</head>
+
+	<body>
+
+		{% include 'header.html' with {'account_name':'w84scaler'} %}
+
+		<div class="main_block">
+
+			{% include 'post_header.html' with {'post_name':'Добро пожаловать на League of BRUH'} %}
+			<p>
+				Здравствуй, bruh! Данный проект посвящен всеми ненавистной игре League of Legends от маленькой инди-компании (не многомилионной!) RitoGames. Если тебя вдруг (упаси господь) угораздило играть в ЭТО, то этот сайт будет полезен тебе, если ты вдруг захочешь посмотреть патчноты или узнать что-нибудь о своих любимых чемпионах. Также ты сможешь общаться с другими игроками (не известно как попавшими на этот сайт). И конечно о том что этот сайт юзлесс (скорее вего) история умалчивает. Добро пожаловать)0
+			</p>
+
+			<div class="content">
+
+				<div class="random_champ">
+					{% include 'post_header.html' with {'post_name':'Случайный чемпион'} %}
+					{% include 'post_pic_1v1.html' with {'post_id':random_champ.id,
+														 'post_name':random_champ.name,
+														 'post_head':random_champ.head} %}
+				</div>
+
+				<div class="last_skin">
+					{% include 'post_header.html' with {'post_name':'Случайный образ'} %}
+					{% include 'post_pic_16v9.html' with {'post_href':'',
+														  'champ_name':random_champ.name,
+														  'post_skin_id':random_champ.skin_id,
+														  'post_name':random_champ.skin_name} %}
+				</div>
+
+			</div>
+
+		</div>
+
+		{% include 'footer.html' %}
+
+		<script src="https://kit.fontawesome.com/5d6364b770.js" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

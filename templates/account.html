@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/lobruh_styles.css">
+		<link rel="stylesheet" href="styles/account_styles.css">
+		{% include 'title.html' with {'title_add':user_name} %}
+	</head>
+
+	<body>
+
+		{% include 'header.html' with {'account_name':user_name} %}
+
+		<div class="main_block">
+
+			{% include 'post_header.html' with {'post_name':'Профиль'} %}
+
+			<div class="content">
+
+				{% include 'account_face.html' with {'account_name':user_name,
+													 'account_rating':'0'} %}
+
+				<div class="account_comments">
+					{% for comment in comments %}
+					<div class="account_comment">
+						{% include 'account_comment.html' with {'comment_name':comment.name,
+																'comment_href':'champion_page.php',
+																'comment_time':comment.time,
+																'comment_text':comment.text} %}
+
+					</div>
+					{% endfor %}
+				</div>
+
+			</div>
+
+		</div>
+
+		{% include 'footer.html' %}
+
+		<script src="https://kit.fontawesome.com/5d6364b770.js" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

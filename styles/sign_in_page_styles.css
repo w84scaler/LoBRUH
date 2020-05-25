@@ -1,0 +1,71 @@
+.empty_header{
+    height: 75px;
+    background-color: #111111;
+    display: flex;
+}
+
+.logo{
+    font-family: Arial, serif;
+    text-align: center;
+    font-size: 25px;
+    color: #FFCC66;
+    font-weight: bold;
+    margin: auto auto 19px;
+}
+
+.logo:hover, .logo:active, .logo:focus {
+    color: #F9F9F9;
+}
+
+.sign_in{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto 20px;
+    height: calc(100vh - 169px);
+}
+
+.work_section{
+    grid-column: 2;
+    margin: auto;
+    padding-bottom: 10vh;
+}
+
+.text_section{
+    margin: 20px;
+    border: 3px solid #FFCC66;
+    border-radius: 1%;
+    height: 50px;
+}
+
+.text_input{
+    margin-left: 10px;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.sign_in_button{
+    margin: 0 20px 20px;
+    width: calc(100% - 40px);
+    border: 3px solid #FFCC66;
+    border-radius: 1%;
+    height: 50px;
+    background-color: #FFCC66;
+    font-size: 20px;
+    cursor: pointer;
+    color: #111111;
+    outline: none;
+}
+
+.sign_in_button:hover, .sign_in_button:active, .sign_in_button:focus {
+    color: #F9F9F9;
+}
+
+.logo_section{
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    color: #FFCC66;
+    font-weight: bold;
+}
