@@ -2,9 +2,13 @@
 	<div class="navigation">
 		<a class="site_logo" href="index.php">League of BRUH</a>
 		<a href="champion_list.php" class="navigation_link">Champion list</a>
-		<a href="runes.php" class="navigation_link">Runes</a>
-		<a href="summoner_spells.php" class="navigation_link">Sammoner spells</a>
-		<a href="patches.php" class="navigation_link">Skins updates</a>
+		{% if account_name %}
+			<a href="log_out.php" class="navigation_link">Log Out</a>
+		{% else %}
+			<a href="sign_in_page.php" class="navigation_link">Log In</a>
+		{% endif %}
 	</div>
-	<a class="login_href" href="account.php"><div class="account_icon" style="background-image: url('avatars/{{account_name}}.jpg')"></div></a>
+	{% if account_name %}
+		<a class="login_href" href="account.php"><div class="account_icon" style="background-image: url('avatars/{{account_name}}.jpg')"></div></a>
+	{% endif %}	
 </div>

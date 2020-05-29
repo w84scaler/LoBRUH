@@ -8,7 +8,7 @@ function get_user_comments($db, $user_id) {
         $stmt->execute(array($user_id));
         $i = 0;
         while ($row = $stmt->fetch(PDO::FETCH_LAZY)) {
-            $res[$i] = array('name' => get_page_name($db, $row['page_id']), 'time' => $row['time'], 'text' =>$row['text']);
+            $res[$i] = array('name' => get_page_name($db, $row['page_id']), 'time' => $row['time'], 'text' =>$row['text'], 'page_id' => $row['page_id']);
             $i++;
         }
         return $res;
@@ -179,6 +179,35 @@ function put_comment($db, $text, $user_id, $page_id, $time){
     try {
         $stmt = $db->prepare("INSERT INTO `comment` (`text`, `time`, `author_id`, `id`, `page_id`) VALUES (?, ?, ?, NULL, ?)");
         $stmt->execute(array($text, $time, $user_id, $page_id));    
+    }
+    catch (PDOException $e) {
+        print "Error!: " . $e->getMessage();
+        die();
+    }
+}
+
+
+function get_user_login($db, $hash) {
+    try {
+        $stmt = $db->prepare("SELECT name FROM user WHERE hash = ?");
+        $stmt->execute(array($hash));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $res = $row['name'];
+        return $res;
+    }
+    catch (PDOException $e) {
+        print "Error!: " . $e->getMessage();
+        die();
+    }
+}
+
+function get_user_id($db, $hash) {
+    try {
+        $stmt = $db->prepare("SELECT id FROM user WHERE hash = ?");
+        $stmt->execute(array($hash));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $res = $row['id'];
+        return $res;
     }
     catch (PDOException $e) {
         print "Error!: " . $e->getMessage();

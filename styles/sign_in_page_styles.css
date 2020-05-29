@@ -1,16 +1,23 @@
-.empty_header{
-    height: 75px;
+.empty_header {
     background-color: #111111;
-    display: flex;
+    font-family: Arial, serif;
+    font-weight: bold;
+    font-size: 25px;
+    height: 75px;
+    display: grid;
+    grid-template-columns: repeat(15,1fr);
 }
 
-.logo{
-    font-family: Arial, serif;
-    text-align: center;
-    font-size: 25px;
-    color: #FFCC66;
-    font-weight: bold;
+.navigation {
     margin: auto auto 19px;
+    grid-column-start: 2;
+    grid-column-end: 15;
+}
+
+.site_logo {
+    text-decoration: none;
+    padding-right: 30px;
+    color: #FFCC66;
 }
 
 .logo:hover, .logo:active, .logo:focus {

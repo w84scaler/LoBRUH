@@ -69,7 +69,7 @@
     grid-template-columns: calc(100% - 100px) 1fr;
 }
 
-.comment_text{
+.comment_form_text{
     margin-left: 10px;
     font-size: 20px;
     border: none;
@@ -122,4 +122,9 @@
 
 .author_icon:hover, .author_icon:active, .author_icon:focus {
     border-color: #F9F9F9;
+}
+
+.comment_text_href{
+    color: red;
+    text-decoration: none;
 }

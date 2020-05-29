@@ -42,8 +42,10 @@
 
 			{% include 'post_header.html' with {'post_name':'Комментарии'} %}
 
-			{% include 'comment_form.html'%}
-
+			{% if user_name %}
+				{% include 'comment_form.html'%}
+			{% endif %}
+			
 			<div class="comments">
 				{% for comment in comments %}
 				<div class="comment">

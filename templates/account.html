@@ -25,7 +25,7 @@
 					{% for comment in comments %}
 					<div class="account_comment">
 						{% include 'account_comment.html' with {'comment_name':comment.name,
-																'comment_href':'champion_page.php',
+																'comment_page_id':comment.page_id,
 																'comment_time':comment.time,
 																'comment_text':comment.text} %}
 

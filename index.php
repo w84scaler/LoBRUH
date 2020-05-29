@@ -11,6 +11,8 @@ $twig = new Twig_Environment($loader, array(
     'auto_reload' => true
 ));
 
+$twig->addGlobal('user_name', get_user_name($db, $_SESSION['user_id']));
+
 $id = rand(1,2);
 $skin_id = rand(1,get_skins_amount($db, $id)-1);
 $random_champ = array('id' => $id, 'name' => get_champ_name($db, $id), 'head' => get_page_name($db, $id), 'skin_id' => $skin_id, 'skin_name' => get_skin_name($db, $id, $skin_id));

@@ -63,3 +63,7 @@
     font-size: 12px;
 }
 
+.comment_text_href{
+    color: red;
+    text-decoration: none;
+}

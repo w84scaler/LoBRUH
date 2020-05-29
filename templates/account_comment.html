@@ -1,5 +1,5 @@
 <div class="account_comment_header">
-	<a class="account_comment_href" href="{{comment_href}}">{{comment_name}}</a>
+	<a class="account_comment_href" href="champion_page.php?page_id={{comment_page_id}}">{{comment_name}}</a>
 	<div class="account_comment_time">{{comment_time}}</div>
 </div>
-<p>{{comment_text}}</p>
+<p>{{ comment_text|raw }}</p>

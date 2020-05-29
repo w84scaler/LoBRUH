@@ -10,18 +10,20 @@
 
 	<body>
 		<div class="empty_header">
-			<div class="logo">League of BRUH</div>
+			<div class="navigation">
+				<a class="site_logo" href="index.php">League of BRUH</a>
+			</div>
 		</div>
 		<div class="main_block">
 
-			<form class="sign_in" action="sign_in.php">
+			<form class="sign_in" action="sign_in.php" method="post">
 				<div class="work_section">
 					{% include 'post_header.html' with {'post_name':'Sign In'} %}
 					<div class="text_section">
-						<input type="text" class="text_input" placeholder="Login">
+						<input name="login" type="text" class="text_input" placeholder="Login">
 					</div>
 					<div class="text_section">
-						<input type="password" class="text_input" placeholder="Password">
+						<input name="password" type="password" class="text_input" placeholder="Password">
 					</div>
 					<input type="submit" class="sign_in_button" value="Sign In">
 				</div>

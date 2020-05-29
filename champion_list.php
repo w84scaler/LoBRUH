@@ -22,5 +22,6 @@ if ($_GET['search'] != '') {
 	$champions = $search;
 }
 
+$twig->addGlobal('user_name', get_user_name($db, $_SESSION['user_id']));
 $twig->addGlobal('form_text', $_GET['search']);
 echo $twig->render('champion_list.html',array('champions'=>$champions));
