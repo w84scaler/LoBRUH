@@ -214,3 +214,38 @@ function get_user_id($db, $hash) {
         die();
     }
 }
+
+function get_user_email($db, $id) {
+    try {
+        $stmt = $db->prepare("SELECT email FROM user WHERE id = ?");
+        $stmt->execute(array($id));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $res = $row['email'];
+        return $res;
+    }
+    catch (PDOException $e) {
+        print "Error!: " . $e->getMessage();
+        die();
+    }
+}
+
+function get_last_5_comments($db){
+    try {
+        $stmt = $db->prepare("SELECT * FROM comment");
+        $stmt->execute();
+        $i = 0;
+        while ($row = $stmt->fetch(PDO::FETCH_LAZY)) {
+            $res[$i] = array('name' => get_page_name($db, $row['page_id']), 'time' => $row['time'], 'text' =>$row['text'], 'author_name' => get_user_name($db,$row['author_id']));
+            $i++;
+        }
+        $last5com = array();
+        for ($l=$i-1;$l>=$i-5;$l--){
+            $last5com[] = $res[$l];
+        }
+        return $last5com;
+    }
+    catch (PDOException $e) {
+        print "Error!: " . $e->getMessage();
+        die();
+    }
+}
